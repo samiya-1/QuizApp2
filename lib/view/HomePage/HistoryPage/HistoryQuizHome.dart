@@ -14,6 +14,9 @@ class _HistoryQuizHomeState extends State<HistoryQuizHome> {
   int currentQuestionIndex = 0;
   int? selectedanswerindex;
   int rightAnswerCount = 0;
+  int skippedAnswerCount = 0;
+    int wrongAnswerCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -104,6 +107,7 @@ class _HistoryQuizHomeState extends State<HistoryQuizHome> {
                         MaterialPageRoute(
                           builder: (context) => ScoreResultBoard(
                             rightAnswerCount: rightAnswerCount,
+                            skippedAnswerCount: skippedAnswerCount, wrongAnswerCount: wrongAnswerCount,
                           ),
                         ));
                   }

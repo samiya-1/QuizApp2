@@ -14,6 +14,9 @@ class _SportsQuizHomeState extends State<SportsQuizHome> {
   int currentQuestionIndex = 0;
   int? selectedanswerindex;
   int rightAnswerCount = 0;
+  int wrongAnswerCount = 0;
+  int skippedAnswerCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -48,6 +51,7 @@ class _SportsQuizHomeState extends State<SportsQuizHome> {
                   (index) => InkWell(
                     onTap: () {
                       if (selectedanswerindex == null) {
+                        skippedAnswerCount++;
                         selectedanswerindex = index;
                         if (selectedanswerindex ==
                             SportsController
@@ -103,7 +107,8 @@ class _SportsQuizHomeState extends State<SportsQuizHome> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ScoreResultBoard(
-                            rightAnswerCount: rightAnswerCount,
+                            rightAnswerCount: rightAnswerCount, skippedAnswerCount: skippedAnswerCount, wrongAnswerCount: wrongAnswerCount,
+                            
                           ),
                         ));
                   }

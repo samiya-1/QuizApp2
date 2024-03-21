@@ -3,8 +3,15 @@ import 'package:quizappcategory/Constants/ColorConstant.dart';
 import 'package:quizappcategory/view/HomePage/HomePageCategory.dart';
 
 class ScoreResultBoard extends StatelessWidget {
-  const ScoreResultBoard({super.key, required int rightAnswerCount});
+  const ScoreResultBoard(
+      {super.key,
+      required int rightAnswerCount,
+      required int skippedAnswerCount,
+      required int wrongAnswerCount});
   final int rightAnswerCount = 0;
+  final int skippedAnswerCount = 0;
+  final int wrongAnswerCount = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
